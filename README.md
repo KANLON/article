@@ -20,8 +20,15 @@
 1. [Spring Boot  @Enable*注解源码解析及自定义@Enable*](./src/SpringBootEnable注解源码解析及自定义Enable.md) 
 
 
+### 测试相关
+
+1. [软件测试漫谈（web测试，自动化测试，Jmeter）](./src/软件测试漫谈（web测试，自动化测试，Jmeter）.md)
+2. [一文弄懂使用Jmeter来进行性能测试](./src/一文弄懂使用Jmeter来进行性能测试.md)
 
 
+### 其他
+
+1. [我去考了一个基本用不到的证书（出版专业资格证）！！！](./src/我去考了一个基本用不到的证书（出版专业资格证）！！！.md)
 
 
 
