@@ -36,7 +36,7 @@ docker run -e PARAMS="--spring.datasource.url=jdbc:mysql://127.0.0.1:3306/xxl_jo
 
 ##  linux Ubuntu 16.04 安装 xxl-job
 
-在linux下直接安装 xxl-job 会有点麻烦， 因为 xxl-job 并没有像 [nacos](https://github.com/alibaba/nacos) 之类的直接提供了一个启动包，直接修改一下配置文件，然后运行启动脚本即可那种。xxl-job 是只提供了的源码文件，如果要运行，需要自己先将 java 源码 通过 maven 打包构建成运行包，然后才能运行。所以接下来我来详细讲述一下如何再linux 下安装启动 xxl-job，这里使用的 linux 版本为：Ubuntu 16.04。 其他版本也类似。
+在linux下直接安装 xxl-job 会有点麻烦， 因为 xxl-job 并没有像 [nacos](https://github.com/alibaba/nacos) 之类的直接提供了一个启动包，直接修改一下配置文件，然后运行启动脚本即可那种。xxl-job 是只提供了的源码文件，如果要运行，需要自己先将 java 源码 通过 maven 打包构建成运行包，然后才能运行。所以接下来我来详细讲述一下如何在 linux 下安装启动 xxl-job，这里使用的 linux 版本为：Ubuntu 16.04。 其他版本也类似。
 
 ### 安装 jdk ，maven ，git 环境
 
