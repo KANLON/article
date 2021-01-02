@@ -58,3 +58,6 @@ org.apache.thrift.transport.TFramedTransport cannot be cast to org.apache.thrift
 4.  `sudo tshark -s 512 -i eth0 -n -f 'tcp dst port 9521'  -l` tshark 的命令，捕捉tcp 的请求的，参考： https://www.cnblogs.com/liun1994/p/6142505.html
 
 
+
+![微信公众号图片](https://s3.ax1x.com/2020/11/25/DdddOS.png)
+
