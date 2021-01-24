@@ -11,18 +11,28 @@
 4. [MySQL数百万行数据条件查询优化](./src/4-MySQL数百万行数据条件查询优化.md)
 5. [MySQL性能监控常用查询命令](./src/5-MySQL性能监控常用查询命令.md)
 6. [什么！你们公司还没有MySQL查询建表规范？](./src/6-什么你们公司还没有MySQL查询建表规范.md)
-
+7. MySQL分页的几种方式
 
 ### Java 相关
 
 1. [Spring Boot  @Enable*注解源码解析及自定义@Enable*](./src/SpringBootEnable注解源码解析及自定义Enable.md) 
+2. Java的垃圾回收机制回顾及常用JVM调用参数配置例子
 
+### Redis 相关
+1. Spring读Redis每分钟数百万请求的时延分析
+
+
+### 微服务相关
+1. nacos集群的搭建及注册原理简单分析
 
 ### 测试相关
 
 1. [软件测试漫谈（web测试，自动化测试，Jmeter）](./src/软件测试漫谈（web测试，自动化测试，Jmeter）.md)
 2. [一文弄懂使用Jmeter来进行性能测试](./src/一文弄懂使用Jmeter来进行性能测试.md)
 
+
+### 部署相关
+1. 定制自己PHP、Node.js、Java、静态文件等环境的基础docker镜像
 
 ### linux 相关
 1. [简单谈谈网络抓包，特别是thrift接口](./src/简单谈谈网络抓包，特别是thrift接口.md)
