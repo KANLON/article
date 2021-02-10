@@ -1,5 +1,6 @@
 # Spring Boot  @Enable*注解源码解析及自定义@Enable*
 
+
 &emsp;&emsp;Spring Boot 一个重要的特点就是自动配置，约定大于配置，几乎所有组件使用其本身约定好的默认配置就可以使用，大大减轻配置的麻烦。其实现自动配置一个方式就是使用@Enable*注解，见其名知其意也，即“使什么可用或开启什么的支持”。
 
 ### Spring Boot 常用@Enable*
@@ -52,7 +53,7 @@
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190214154202827.PNG)
 
-@EnableScheduling（自己直接新建相关类，不继承***Selector和***Registrar） 开启计划任务的支持
+@EnableScheduling（这个比较**特殊**，为自己直接新建相关类，不继承***Selector和***Registrar） 开启计划任务的支持
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190214154042196.PNG)
 
@@ -61,13 +62,19 @@
 
 该元注解是被用来整合所有在@Configuration注解中定义的bean配置，即相当于我们将多个XML配置文件导入到单个文件的情形。
 
-而它们所引入的配置类，主要分为***Selector和***Registrar，其分别实现了ImportSelector和ImportBeanDefinitionRegistrar接口，
+而它们所引入的配置类，主要分为***Selector和***Registrar，其分别实现了`ImportSelector`和`ImportBeanDefinitionRegistrar`接口，
 
 ![ImportSelector接口源码](https://img-blog.csdnimg.cn/2019021416233925.PNG)
 
 ![ImportBeanDefinitionRegistrar接口源码](https://img-blog.csdnimg.cn/20190214162414379.PNG)
 
 两个的大概意思都是说，会根据AnnotationMetadata元数据注册bean类，即返回的Bean 会自动的被注入，被Spring所管理。
+
+既然他们功能都相同，都是用来返回类，为什么 Spring 有这**两种不同的接口类**的呢？
+
+其实刚开始的时候我也以为它们功能应该都是一样的，后面我在组内分享的时候，我的导师就问了我这个问题，然后当时我没有留意这个点所以答不出来😂。后面回去细看了一下和搜索了相关资料，发现它们的功能有些细微差别。首先我们从上面截图可以清楚地看到`ImportBeanDefinitionRegistrar`接口类中 `registerBeanDefinitions`方法多了一个参数 `BeanDefinitionRegistry`（点击这个参数进入看这个参数的Javadoc，可以知道，它是用于保存bean定义的注册表的接口），所以如果是实现了这个接口类的首先可以应用比较复杂的注册类的判断条件，例如：可以判断之前的类是否有注册到 Spring 中了。另外就是实现了这个接口类能修改或新增 Spring 类定义`BeanDefinition`的一些属性（查看其中一个实现了这个接口例子如：`AspectJAutoProxyRegistrar`，追查 `BeanDefinitionRegistry`参数可以查看到）。
+
+
 
 #### 具体实现例子@EnableDiscoveryClient
 可以看一下具体的一个例子在@EnableDiscoveryClient引入了EnableDiscoveryClientImportSelector，通过查看其继承实现图
@@ -84,11 +91,11 @@
 通过查看@Enable*源码，我们可以清楚知道其实现自动配置的方式的底层就是通过@Import注解引入相关配置类，然后再在配置类将所需的bean注册到spring容器中和实现组件相关处理逻辑去。
 
 ### 自定义@Enable*注解（EnableSelfBean）
-&emsp:&emsp:在这里我们利用@Import和ImportSelector动手自定义一个自己的EnableSelfBean。该Enable注解可以将某些包下的所有类自动注册到spring容器中，对于一些实体类的项目很多的情况下，可以考虑一下通过这种方式将某包下所有类自动加入到spring容器，不再需要每个类再加上@Component等注解。
+&emsp;&emsp;在这里我们利用@Import和ImportSelector动手自定义一个自己的EnableSelfBean。该Enable注解可以将某些包下的所有类自动注册到spring容器中，对于一些实体类的项目很多的情况下，可以考虑一下通过这种方式将某包下所有类自动加入到spring容器，不再需要每个类再加上@Component等注解。
 
 1. 先创建一个spring boot项目。
 2. 创建包entity，并新建类Role，将其放入到entity包中。
-```
+```java
 /**
  * 测试自己的自动注解的实体类
  * @author zhangcanlong
@@ -101,7 +108,7 @@ public class Role {
 }
 ```
 3. 创建自定义配置类SelfEnableAutoConfig并实现ImportSelector接口。其中使用到ClassUtils类是用来获取自己某个包下的所有类的名称的。
-```
+```java
 /**
  * 自己的定义的自动注解配置类
  * @author zhangcanlong
@@ -137,7 +144,7 @@ public class SelfEnableAutoConfig implements ImportSelector {
 ```
 ClassUtil类
 
-```
+```java
 /**
  * 获取所有包下的类名的工具类。参考：https://my.oschina.net/cnlw/blog/299265
  * @author zhangcanlong
@@ -259,7 +266,7 @@ public class ClassUtils {
 
 
 4. 创建自定义注解类EnableSelfBean
-```
+```java
 /**
  * 自定义注解类，将某个包下的所有类自动加载到spring 容器中，不管有没有注解，并打印出
  * @author zhangcanlong
@@ -276,7 +283,7 @@ public @interface EnableSelfBean {
 ```
 
 5. 创建启动类SpringBootEnableApplication
-```
+```java
 @SpringBootApplication
 @EnableSelfBean(packages = "com.kanlon.entity")
 public class SpringBootEnableApplication {
@@ -307,10 +314,11 @@ public class SpringBootEnableApplication {
 
 
 参考：
-http://tangxiaolin.com/learn/show?id=402881d2648c88cc01648c89d8730001
+1. http://tangxiaolin.com/learn/show?id=402881d2648c88cc01648c89d8730001
+2. SpringBoot @Enable* 注解 https://segmentfault.com/a/1190000015188776
+3. 获取指定包名下的所有类的类名（全名) https://my.oschina.net/cnlw/blog/299265)
+4. Spring-Boot之@Enable*注解的工作原理 https://www.jianshu.com/p/3da069bd865c
+5. Spring源码解析------@Import注解解析与ImportSelector，ImportBeanDefinitionRegistrar以及DeferredImportSelector区别 https://www.xiaoquan.work/articles/2020/01/03/1578016154544.html
+6. @import和@Bean的区别，以及ImportSelector和ImportBeanDefinitionRegistrar两个接口的简单实用 https://blog.csdn.net/qq_22701869/article/details/102561494
 
-[springBoot @Enable* 注解](https://segmentfault.com/a/1190000015188776)
-
-[获取指定包名下的所有类的类名（全名）](https://my.oschina.net/cnlw/blog/299265)
-
-[Spring-Boot之@Enable*注解的工作原理](https://www.jianshu.com/p/3da069bd865c)
+![CrudBoys](https://img-blog.csdnimg.cn/20201114143851114.png)
