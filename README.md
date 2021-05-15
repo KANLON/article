@@ -20,6 +20,18 @@
 3. Java的垃圾回收机制回顾及常用JVM调用参数配置例子
 4. [Spring Boot的自动配置原理及启动流程源码分析](./src/SpringBoot的自动配置原理及启动流程源码分析.md)
 
+
+### 可视化系统相关
+1. Davinci 可视化系统部署安装及简单使用
+2. Superset 可视化BI系统部署安装及简单使用
+3. Metabase 可视化BI系统部署安装及简单使用
+4. Redash 可视化BI系统部署安装及简单使用
+5. CBoard 可视化BI系统部署安装及简单使用
+5. 润乾报表 可视化BI系统部署安装及简单使用
+6. 各种开源的可视化BI系统功能对比分析 （参考：https://www.zhihu.com/question/266752015）
+7. 工作两年来对可视化BI系统的一些个人体会
+
+
 ### Redis 相关
 1. Spring读Redis每分钟数百万请求的时延分析
 
