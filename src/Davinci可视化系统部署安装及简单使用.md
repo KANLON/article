@@ -93,7 +93,7 @@ davinic创建的官方文档地址： [https://edp963.github.io/davinci/docs/zh/
 
 我这里简单展示一下自制的教程动图吧，如果有不懂的，可以看一下官方文档里面的教程
 
-
+教程视频链接：[https://www.bilibili.com/video/BV1AU4y1b7Ms](https://www.bilibili.com/video/BV1AU4y1b7Ms)
 
 ## 总结
 
