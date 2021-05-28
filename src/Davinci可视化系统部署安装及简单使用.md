@@ -54,6 +54,10 @@ cp /data/davinci-install-package/google-chrome-stable_current_amd64.deb ./
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 echo "强制安装所有缺少的依赖"
 sudo apt-get install -f -y
+sudo /etc/init.d/dbus start
+sudo apt-get install libnss3 -y
+echo "测试chrome是否成功启动"
+sudo google-chrome --no-sandbox --headless --disable-gpu  --user-data-dir  https://www.baidu.com
 cp /data/davinci-install-package/chromedriver_linux64.zip /data/zhangcanlong/
 unzip /data/zhangcanlong/chromedriver_linux64.zip 
 cp /data/zhangcanlong/chromedriver /usr/bin/
@@ -64,7 +68,7 @@ echo "启动服务"
 
 如果压缩一条命令就是下面这样了，基本先下载了上面的安装包资源，再运行下面这条安装命令就可以完成安装davinci了
 ```shell
-echo "复制安装包" && mkdir -pv /data/services/davinci-service && cd /data/services/davinci-service && cp /data/davinci-install-package/davinci0.3.1.zip  /data/services/davinci-service && unzip davinci0.3.1.zip  && mv davinci-assembly_0.3.1-0.3.1-SNAPSHOT-dist-rc davinci0.3.1 && echo "复制配置" && /bin/cp -rf /data/davinci-install-package/application.yml /data/services/davinci-service/davinci0.3.1/config && export DAVINCI3_HOME=/data/services/davinci-service/davinci0.3.1 && echo "安装Chrome的驱动方便截图" && mkdir -pv /data/zhangcanlong && sudo apt-get update && cd /data/zhangcanlong && echo "安装 chorme" && cp /data/davinci-install-package/google-chrome-stable_current_amd64.deb ./ && sudo dpkg -i google-chrome-stable_current_amd64.deb && echo "强制安装所有缺少的依赖" && sudo apt-get install -f -y && cp /data/davinci-install-package/chromedriver_linux64.zip /data/zhangcanlong/ && unzip /data/zhangcanlong/chromedriver_linux64.zip  && cp /data/zhangcanlong/chromedriver /usr/bin/ && chromedriver --version && echo "启动服务" && /data/services/davinci-service/davinci0.3.1/bin/start-server.sh
+echo "复制安装包" && mkdir -pv /data/services/davinci-service && cd /data/services/davinci-service && cp /data/davinci-install-package/davinci0.3.1.zip  /data/services/davinci-service && unzip davinci0.3.1.zip  && mv davinci-assembly_0.3.1-0.3.1-SNAPSHOT-dist-rc davinci0.3.1 && echo "复制配置" && /bin/cp -rf /data/davinci-install-package/application.yml /data/services/davinci-service/davinci0.3.1/config && export DAVINCI3_HOME=/data/services/davinci-service/davinci0.3.1 && echo "安装Chrome的驱动方便截图" && mkdir -pv /data/zhangcanlong && sudo apt-get update && cd /data/zhangcanlong && echo "安装 chorme" && cp /data/davinci-install-package/google-chrome-stable_current_amd64.deb ./ && sudo dpkg -i google-chrome-stable_current_amd64.deb && echo "强制安装所有缺少的依赖" && sudo apt-get install -f -y  && sudo /etc/init.d/dbus start && sudo apt-get install libnss3 -y && echo "测试chrome是否成功启动" && sudo google-chrome --no-sandbox --headless --disable-gpu   --user-data-dir  https://www.baidu.com && cp /data/davinci-install-package/chromedriver_linux64.zip /data/zhangcanlong/ && unzip /data/zhangcanlong/chromedriver_linux64.zip  && cp /data/zhangcanlong/chromedriver /usr/bin/ && chromedriver --version && echo "启动服务" && /data/services/davinci-service/davinci0.3.1/bin/start-server.sh
 ```
 
 
