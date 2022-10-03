@@ -58,7 +58,7 @@
 ### linux 相关
 1. [简单谈谈网络抓包，特别是thrift接口](./src/简单谈谈网络抓包，特别是thrift接口.md)
 2. [shell脚本检查域名证书是否过期](./src/shell脚本检查域名证书是否过期.md)
-3. [linux unbuntu分别一行安装git ,python3.7,nodejs,php5.6 ,maven,jdk8等各种工具软件](./src/linux-unbuntu分别一行安装git ,python3.7,nodejs,php5.6 ,maven,jdk8等各种工具软件.md)
+3. [linux unbuntu分别一行git,python3.7,nodejs,php5.6,maven,jdk8安装等各种工具软件](./src/linux-unbuntu分别一行安装git,python3.7,nodejs,php5.6,maven,jdk8等各种工具软件.md)
 
 ### 技术其他
 
