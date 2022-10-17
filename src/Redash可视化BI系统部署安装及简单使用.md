@@ -174,10 +174,10 @@ https://redash.io/
 账号和密码获取，关注 CrudBoys 公众号 回复 “可视化”  获取
 
 ## 参考
-<font color="gray" face="宋体" size=1>1. [Redash 使用流程](https://jerrytechblog.com/2020/07/31/redash-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/)</font>
-<font color="gray" face="宋体" size=1>2. [数据可视化的开源方案: Superset vs Redash vs Metabase (二)](https://cloud.tencent.com/developer/article/1464171)</font>
-<font color="gray" face="宋体" size=1>3. [通过 Docker 安装 Redash](https://www.isky.wang/notes/docker-swarm-install-redash/)</font>
-<font color="gray" face="宋体" size=1>4.  [redash 官网](https://redash.io/)</font>
-<font color="gray" face="宋体" size=1>5. [官网安装教程](https://redash.io/help/open-source/setup)</font>
-<font color="gray" face="宋体" size=1>6. [dockerfile 文件](https://raw.githubusercontent.com/getredash/redash/07f047c36b681eed559bbc45c9ad4dd77081c2e3/Dockerfile)</font>
-<font color="gray" face="宋体" size=1>7. [根据镜像生成dockerfile](https://hub.docker.com/r/alpine/dfimage)</font>
+<font color="gray" face="宋体" size=1>1. [Redash 使用流程](https://jerrytechblog.com/2020/07/31/redash-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/)</font><br/>
+<font color="gray" face="宋体" size=1>2. [数据可视化的开源方案: Superset vs Redash vs Metabase (二)](https://cloud.tencent.com/developer/article/1464171)</font><br/>
+<font color="gray" face="宋体" size=1>3. [通过 Docker 安装 Redash](https://www.isky.wang/notes/docker-swarm-install-redash/)</font><br/>
+<font color="gray" face="宋体" size=1>4.  [redash 官网](https://redash.io/)</font><br/>
+<font color="gray" face="宋体" size=1>5. [官网安装教程](https://redash.io/help/open-source/setup)</font><br/>
+<font color="gray" face="宋体" size=1>6. [dockerfile 文件](https://raw.githubusercontent.com/getredash/redash/07f047c36b681eed559bbc45c9ad4dd77081c2e3/Dockerfile)</font><br/>
+<font color="gray" face="宋体" size=1>7. [根据镜像生成dockerfile](https://hub.docker.com/r/alpine/dfimage)</font><br/>
