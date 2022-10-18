@@ -9,10 +9,12 @@
 add-apt-repository ppa:deadsnakes/ppa -y && apt-get update && apt-get install python3-pip python-pip python3.7 libnss3 -y && rm /usr/bin/python && ln -s /usr/bin/python3.7 /usr/bin/python 
 ```
 
-### 安装 node14 
+### 安装 node14  和 yarn
 ```shell
-apt-get -y update && curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - && apt-get -y install  nodejs && npm install npm@latest -g && npm install yarn -g && npm install pm2 -g  
+ sudo apt-get -y update &&  sudo  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&  sudo apt-get -y install  nodejs &&  sudo  npm install npm@latest -g &&  sudo npm install yarn -g && sudo npm install pm2 -g  && echo "修改npm 源为淘宝的" && sudo npm config set registry https://registry.npm.taobao.org && npm install -g yarn
 ```
+其中淘宝源设置为：
+`sudo npm config set registry https://registry.npm.taobao.org`
 
 ### 安装git
 
