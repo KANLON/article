@@ -28,9 +28,10 @@
 4. [Redash 可视化BI系统部署安装及简单使用](./src/Redash可视化BI系统部署安装及简单使用.md)
 5. CBoard 可视化BI系统部署安装及简单使用
 5. 润乾报表 可视化BI系统部署安装及简单使用
-6. 各种开源的可视化BI系统功能对比分析 （参考：https://www.zhihu.com/question/266752015 ）
-7. 工作两年来对可视化BI系统的一些个人体会
-8. SQL转ES的DSL查询语法和SQL的简单解析
+6. [Metabase可视化BI系统部署安装及简单使用](./src/Metabase可视化BI系统部署安装及简单使用.md)
+7. 各种开源的可视化BI系统功能对比分析 （参考：https://www.zhihu.com/question/266752015 ）
+8. 工作两年来对可视化BI系统的一些个人体会
+9. SQL转ES的DSL查询语法和SQL的简单解析
 
 
 ### Redis 相关
