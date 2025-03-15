@@ -94,7 +94,7 @@
 
 PsTools下载地址：[https://learn.microsoft.com/zh-cn/sysinternals/downloads/pstools](https://learn.microsoft.com/zh-cn/sysinternals/downloads/pstools)
 
-有时候这个下载不一定能正常下载，可以直接到这里下载 
+有时候这个下载不一定能正常下载，可以直接到这里下载  [https://download.csdn.net/download/weixin_37610397/90486727?spm=1001.2101.3001.9500](https://download.csdn.net/download/weixin_37610397/90486727?spm=1001.2101.3001.9500)
 
 下载后将其解压缩到桌面或者其他简短的文件夹中，方便等会cmd进入这个路径。
 
