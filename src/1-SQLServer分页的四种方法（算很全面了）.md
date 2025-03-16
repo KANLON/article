@@ -6,7 +6,7 @@
 要查询的学生表的部分记录
 ![要查询的学生表的部分记录](https://i-blog.csdnimg.cn/blog_migrate/f91c1fccd553cc6d1ebc36824c5f1504.png)
 
-###  方法一：三重循环
+### 方法一：三重循环
 ##### 思路
 &emsp;&emsp;先取前20页，然后倒序，取倒序后前10条记录，这样就能得到分页所需要的数据，不过顺序反了，之后可以将再倒序回来，也可以不再排序了，直接交给前端排序。<br/>
 &emsp;&emsp;还有一种方法也算是属于这种类型的，这里就不放代码出来了，只讲一下思路，就是先查询出前10条记录，然后用not in排除了这10条，再查询。
@@ -95,12 +95,12 @@ over(order by sno asc) as rownumber,*
 from student) temp_row
 where rownumber>10;
 ```
-#### 查询出的结果及时间
+##### 查询出的结果及时间
 ![方法三查询结果](https://i-blog.csdnimg.cn/blog_migrate/c50d9ea32a73781d72101a7d5a10615c.png)
 ![方法三查询时间](https://i-blog.csdnimg.cn/blog_migrate/0886d55e13969227291938f4624dad13.png)
 
-###  第四种方法：offset /fetch next（2012版本及以上才有）
-#####  代码实现
+### 第四种方法：offset /fetch next（2012版本及以上才有）
+##### 代码实现
 
 ```sql
 set statistics time on;
@@ -118,7 +118,7 @@ fetch next 10 rows only ;
 ```
 
 offset A rows ,将前A条记录舍去，fetch next B rows only ，向后在读取B条数据。
-##### 结果及运行时间
+#####  结果及运行时间
 ![方法四查询结果](https://i-blog.csdnimg.cn/blog_migrate/b8972413c03f3b0bb6f5f49b979de98b.png)
 ![方法四查询结果](https://i-blog.csdnimg.cn/blog_migrate/adfe028e3de7f5c7e0ad0f60a62d06c3.png)
 ### 封装的存储过程
