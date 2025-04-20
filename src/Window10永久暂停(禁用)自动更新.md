@@ -113,5 +113,11 @@ psexec.exe -i -s %windir%\system32\mmc.exe /s taskschd.msc
 
 ![ ](https://i-blog.csdnimg.cn/direct/605a6476ec7d4524b3e1f3939a7291e0.png)
 
+
+# 另外一种方便的操作
+[https://github.com/tsgrgo/windows-update-disabler](tsgrgo/windows-update-disabler)    后面发现有另外一个思路，使用开源的禁止更新器，应该会更简单，原理大概是一样
+
+
+
 # 参考 
 1. 彻底禁止Windows10系统自动更新方法 [https://www.linfengnet.com/skill/1566.html](https://www.linfengnet.com/skill/1566.html)
