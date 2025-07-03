@@ -8,6 +8,7 @@
 
 ### 1. 首先说一下sql语句结束标志
 mysql以`;`结束一条SQL语句；SQL server 以`;`或`go`或不写结束都可以。不过建议写sql server的时候以`go`结束，因为sql server很多语句要以等一个语句结束后才能写下一个语句，不然会报<font color='red' >批处理错误</font>（深受其害）。<br/><br/>
+
 ### 2. 查看表结构数量等
   mysql 语句
   
@@ -34,13 +35,19 @@ sp_help/sp_columns 表名;
   
 相比来说，mysql 的更为简洁。
 ### 3、查询前几条记录
+
 查询前10条记录：
+
 mysql 语句
 `select * from student limit 10;`
+
 sql server 语句
 `select top 10 * from student ;`
+
 ###  4、获取当前时间
+
 MySQL写法：`now()`
+
 SQLServer写法：`getdate()`
 
 ###  5、从数据库定位到某张表

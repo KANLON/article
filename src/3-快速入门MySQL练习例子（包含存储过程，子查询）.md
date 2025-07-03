@@ -35,7 +35,7 @@
 ### 答案
 
 MySQL的 SQL语句如下：
-```
+```sql
 -- 创建数据库
 CREATE DATABASE IF NOT EXISTS test_message CHARACTER SET utf8;
 USE test_message;
